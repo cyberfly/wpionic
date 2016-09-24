@@ -1,0 +1,16 @@
+<ion-view view-title="Playlists">
+  <ion-nav-buttons side="right">
+  <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete" ></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-delete="data.showDelete">
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        <!-- delete button -->
+
+        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

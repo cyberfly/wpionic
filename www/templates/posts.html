@@ -1,0 +1,36 @@
+<ion-view view-title="Posts">
+  <ion-nav-buttons side="right">
+  <button class="button button-icon ion-compose" ng-click="modal.show()" ng-showa="checkLoggedIn()"></button>
+  <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete" ng-showa="checkLoggedIn()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+  <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+ </ion-refresher>
+    <ion-list show-delete="data.showDelete">
+      <ion-item ng-repeat="post in posts" href="#app/posts/{{$index}}" class="item item-thumbnail-left" >
+        
+        <!-- delete button -->
+
+        <ion-delete-button class="ion-minus-circled" ng-click="delete(post)"></ion-delete-button>
+
+        <img class="" ng-src="{{post.x_featured_media || 'img/defaultimage.jpg'}}">
+        {{post.title.rendered}}
+        <p>{{post.x_date}}</p>
+        <p>{{post.x_author}}</p>  
+
+        <!-- edit button -->
+
+        <ion-option-button class="button-royal" ng-click="edit(post)">
+          Edit
+        </ion-option-button>
+        
+      </ion-item>
+
+
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>

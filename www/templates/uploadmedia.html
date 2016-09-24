@@ -1,0 +1,24 @@
+<ion-view view-title="Upload Media">
+  <ion-content>
+    <form>
+      <div class="padding">
+               <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+               <img ng-show="imgURI === undefined" ng-src="img/defaultimage.jpg">
+      </div>   
+      <div class="list">
+          
+        <div class="row">
+          <div class="col">
+            <button class="button button-block button-assertive icon-left ion-camera" ng-click="openCamera()">Camera</button>
+          </div>
+          <div class="col">
+            <button class="button button-block button-dark icon-left ion-ios-browsers" ng-click="openFileManager()">Browse File</button>
+          </div>
+        </div>
+        <label class="item">
+          <button class="button button-block button-balanced" type="button" ng-click="uploadMedia()" ng-show="checkLoggedIn()" >Submit Post</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

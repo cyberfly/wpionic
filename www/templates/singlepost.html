@@ -1,0 +1,19 @@
+<ion-view view-title="{{post.title.rendered}}">
+  <ion-content>
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="{{post.x_avatar}}">
+        <h2>{{post.title.rendered}}</h2>
+        <p>{{post.x_date}}</p>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{post.x_featured_media_medium || 'img/defaultimage.jpg' }}">
+        <div ng-bind-html="post.content.rendered"></div>
+        
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

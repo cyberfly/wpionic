@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">New Post</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createPost()">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Title</span>
+          <input type="text" placeholder="Title" ng-model="postData.title">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Content</span>
+          <textarea  placeholder="Content" ng-model="postData.content"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Submit Post</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
